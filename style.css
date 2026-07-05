@@ -73,6 +73,13 @@ hr {
     border-top: 1px solid #000;
     margin: 10px 20px;
 }
+h1 {
+    margin-bottom: 30px;
+}
+
+.title-card {
+    margin-bottom: 25px;
+}
 
 .number {
     font-size: 26px;
