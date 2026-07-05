@@ -236,6 +236,36 @@ const input = document.getElementById("numberInput");
 const result = document.getElementById("result");
 
 input.addEventListener("input", () => {
+    const number = Number(input.value);
+    const rider = riders[number];
+
+    if (rider) {
+        const color = teamColors[rider.team] || "#555";
+
+        result.innerHTML = `
+            <div class="card">
+
+                <div class="color" style="background:${color}"></div>
+
+                <h2>${rider.name}</h2>
+
+                <hr>
+
+                <p>${rider.team}</p>
+
+                <hr>
+
+                <div class="number">#${number}</div>
+
+            </div>
+        `;
+    } else {
+        result.textContent = "Nicht gefunden";
+    }
+});
+
+/*
+input.addEventListener("input", () => {
       const number = Number(input.value)
     const rider = riders[number];
     
@@ -258,6 +288,6 @@ input.addEventListener("input", () => {
     } else {
         result.textContent = "Nicht gefunden";
     }
-});
+});/*
 
 //Hallo Hallo, Upadate Update  #FFD100
