@@ -207,6 +207,31 @@ const riders = {
     228: { name: "José Félix Parra", team: "Caja Rural - Seguros RGA" },
 };
 
+const teamColors = {
+    "UAE Team Emirates - XRG":"#b3002d",
+    "Team Visma | Lease a Bike":"#ffd400",
+    "Red Bull - BORA - hansgrohe":"#003a8c",
+    "Lidl - Trek":"#0055cc",
+    "EF Education - EasyPost":"#ff4fa3",
+    "XDS Astana Team":"#00a9e0",
+    "Bahrain - Victorious":"#c4002f",
+    "Netcompany INEOS":"#ff5b00",
+    "Soudal Quick-Step":"#0047ab",
+    "Alpecin - Premier Tech":"#0050a0",
+    "Team Jayco AlUla":"#0047ba",
+    "Uno-X Mobility":"#d71920",
+    "NSN Cycling Team":"#00a651",
+    "Movistar Team":"#002d72",
+    "Lotto Intermarché":"#d50032",
+    "Cofidis":"#e30613",
+    "Pinarello Q36.5 Pro Cycling Team":"#4CAF50",
+    "Groupama - FDJ United":"#0055a4",
+    "Tudor Pro Cycling Team":"#111111",
+    "TotalEnergies":"#ff5f00",
+    "Team Picnic PostNL":"#ff6a00",
+    "Caja Rural - Seguros RGA":"#00843d"
+};
+
 const input = document.getElementById("numberInput");
 const result = document.getElementById("result");
 
@@ -215,10 +240,21 @@ input.addEventListener("input", () => {
     const rider = riders[number];
     
     if (rider) {
-        result.innerHTML = `
-            <strong>${rider.name}</strong><br>
-            <span>${rider.team}</span>
-        `;
+       const color = teamColors[rider.team] || "#555";
+
+            result.innerHTML = `
+            <div class="card">
+            
+                <div class="color" style="background:${color}"></div>
+            
+                <div class="number">#${number}</div>
+            
+                <h2>${rider.name}</h2>
+            
+                <p>${rider.team}</p>
+            
+            </div>
+            `;
     } else {
         result.textContent = "Nicht gefunden";
     }
