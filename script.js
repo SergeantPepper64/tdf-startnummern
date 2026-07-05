@@ -264,30 +264,5 @@ input.addEventListener("input", () => {
     }
 });
 
-/*
-input.addEventListener("input", () => {
-      const number = Number(input.value)
-    const rider = riders[number];
-    
-    if (rider) {
-       const color = teamColors[rider.team] || "#555";
-
-            result.innerHTML = `
-            <div class="card">
-            
-                <div class="color" style="background:${color}"></div>
-            
-                <div class="number">#${number}</div>
-            
-                <h2>${rider.name}</h2>
-            
-                <p>${rider.team}</p>
-            
-            </div>
-            `;
-    } else {
-        result.textContent = "Nicht gefunden";
-    }
-});/*
 
 //Hallo Hallo, Upadate Update  #FFD100
