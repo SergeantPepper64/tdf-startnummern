@@ -222,4 +222,4 @@ input.addEventListener("input", () => {
     } else {
         result.textContent = "Nicht gefunden";
     }
-);
+});
