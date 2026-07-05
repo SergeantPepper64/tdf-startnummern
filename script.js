@@ -1,21 +1,224 @@
 const riders = {
-    1: "Tadej Pogačar",
-    11: "Jonas Vingegaard",
-    21: "Remco Evenepoel",
-    31: "Mathieu van der Poel",
-    41: "Wout van Aert"
+      1: { name: "Tadej Pogačar", team: "UAE Team Emirates - XRG" },
+    2: { name: "Isaac Del Toro", team: "UAE Team Emirates - XRG" },
+    3: { name: "Felix Großschartner", team: "UAE Team Emirates - XRG" },
+    4: { name: "Brandon McNulty", team: "UAE Team Emirates - XRG" },
+    5: { name: "Nils Politt", team: "UAE Team Emirates - XRG" },
+    6: { name: "Florian Vermeersch", team: "UAE Team Emirates - XRG" },
+    7: { name: "Tim Wellens", team: "UAE Team Emirates - XRG" },
+    8: { name: "Adam Yates", team: "UAE Team Emirates - XRG" },
+
+    11: { name: "Jonas Vingegaard", team: "Team Visma | Lease a Bike" },
+    12: { name: "Edoardo Affini", team: "Team Visma | Lease a Bike" },
+    13: { name: "Bruno Armirail", team: "Team Visma | Lease a Bike" },
+    14: { name: "Victor Campenaerts", team: "Team Visma | Lease a Bike" },
+    15: { name: "Per Strand Hagenes", team: "Team Visma | Lease a Bike" },
+    16: { name: "Matteo Jorgenson", team: "Team Visma | Lease a Bike" },
+    17: { name: "Sepp Kuss", team: "Team Visma | Lease a Bike" },
+    18: { name: "Davide Piganzoli", team: "Team Visma | Lease a Bike" },
+
+    21: { name: "Remco Evenepoel", team: "Red Bull - BORA - hansgrohe" },
+    22: { name: "Mattia Cattaneo", team: "Red Bull - BORA - hansgrohe" },
+    23: { name: "Nico Denz", team: "Red Bull - BORA - hansgrohe" },
+    24: { name: "Jai Hindley", team: "Red Bull - BORA - hansgrohe" },
+    25: { name: "Florian Lipowitz", team: "Red Bull - BORA - hansgrohe" },
+    26: { name: "Jan Tratnik", team: "Red Bull - BORA - hansgrohe" },
+    27: { name: "Tim van Dijke", team: "Red Bull - BORA - hansgrohe" },
+    28: { name: "Maxim Van Gils", team: "Red Bull - BORA - hansgrohe" },
+
+    31: { name: "Juan Ayuso", team: "Lidl - Trek" },
+    32: { name: "Derek Gee", team: "Lidl - Trek" },
+    33: { name: "Mads Pedersen", team: "Lidl - Trek" },
+    34: { name: "Quinn Simmons", team: "Lidl - Trek" },
+    35: { name: "Mattias Skjelmose", team: "Lidl - Trek" },
+    36: { name: "Toms Skujiņš", team: "Lidl - Trek" },
+    37: { name: "Mathias Vacek", team: "Lidl - Trek" },
+    38: { name: "Carlos Verona", team: "Lidl - Trek" },
+
+    41: { name: "Richard Carapaz", team: "EF Education - EasyPost" },
+    42: { name: "Kasper Asgreen", team: "EF Education - EasyPost" },
+    43: { name: "Alex Baudin", team: "EF Education - EasyPost" },
+    44: { name: "Ben Healy", team: "EF Education - EasyPost" },
+    45: { name: "Sean Quinn", team: "EF Education - EasyPost" },
+    46: { name: "Georg Steinhauser", team: "EF Education - EasyPost" },
+    47: { name: "Michael Valgren", team: "EF Education - EasyPost" },
+    48: { name: "Max Walker", team: "EF Education - EasyPost" },
+
+    51: { name: "Paul Seixas", team: "Decathlon CMA CGM Team" },
+    52: { name: "Tiesj Benoot", team: "Decathlon CMA CGM Team" },
+    53: { name: "Cees Bol", team: "Decathlon CMA CGM Team" },
+    54: { name: "Daan Hoole", team: "Decathlon CMA CGM Team" },
+    55: { name: "Olav Kooij", team: "Decathlon CMA CGM Team" },
+    56: { name: "Aurélien Paret-Peintre", team: "Decathlon CMA CGM Team" },
+    57: { name: "Nicolas Prodhomme", team: "Decathlon CMA CGM Team" },
+    58: { name: "Matthew Riccitello", team: "Decathlon CMA CGM Team" },
+
+    61: { name: "Sergio Higuita", team: "XDS Astana Team" },
+    62: { name: "Davide Ballerini", team: "XDS Astana Team" },
+    63: { name: "Aaron Gate", team: "XDS Astana Team" },
+    64: { name: "Max Kanter", team: "XDS Astana Team" },
+    65: { name: "Harold Tejada", team: "XDS Astana Team" },
+    66: { name: "Mike Teunissen", team: "XDS Astana Team" },
+    67: { name: "Simone Velasco", team: "XDS Astana Team" },
+    68: { name: "Nicolas Vinokurov", team: "XDS Astana Team" },
+
+    71: { name: "Lenny Martinez", team: "Bahrain - Victorious" },
+    72: { name: "Phil Bauhaus", team: "Bahrain - Victorious" },
+    73: { name: "Damiano Caruso", team: "Bahrain - Victorious" },
+    74: { name: "Kamil Gradek", team: "Bahrain - Victorious" },
+    75: { name: "Matej Mohorič", team: "Bahrain - Victorious" },
+    76: { name: "Robert Stannard", team: "Bahrain - Victorious" },
+    77: { name: "Antonio Tiberi", team: "Bahrain - Victorious" },
+    78: { name: "Vlad Van Mechelen", team: "Bahrain - Victorious" },
+
+    81: { name: "Egan Bernal", team: "Netcompany INEOS" },
+    82: { name: "Thymen Arensman", team: "Netcompany INEOS" },
+    83: { name: "Tobias Foss", team: "Netcompany INEOS" },
+    84: { name: "Filippo Ganna", team: "Netcompany INEOS" },
+    85: { name: "Dorian Godon", team: "Netcompany INEOS" },
+    86: { name: "Michał Kwiatkowski", team: "Netcompany INEOS" },
+    87: { name: "Joshua Tarling", team: "Netcompany INEOS" },
+    88: { name: "Kévin Vauquelin", team: "Netcompany INEOS" },
+
+    91: { name: "Tim Merlier", team: "Soudal Quick-Step" },
+    92: { name: "Pascal Eenkhoorn", team: "Soudal Quick-Step" },
+    93: { name: "Valentin Paret-Peintre", team: "Soudal Quick-Step" },
+    94: { name: "Jasper Stuyven", team: "Soudal Quick-Step" },
+    95: { name: "Dylan van Baarle", team: "Soudal Quick-Step" },
+    96: { name: "Bert Van Lerberghe", team: "Soudal Quick-Step" },
+    97: { name: "Ilan Van Wilder", team: "Soudal Quick-Step" },
+    98: { name: "Louis Vervaeke", team: "Soudal Quick-Step" },
+
+    101: { name: "Mathieu van der Poel", team: "Alpecin - Premier Tech" },
+    102: { name: "Ramses Debruyne", team: "Alpecin - Premier Tech" },
+    103: { name: "Silvan Dillier", team: "Alpecin - Premier Tech" },
+    104: { name: "Tim Marsman", team: "Alpecin - Premier Tech" },
+    105: { name: "Jasper Philipsen", team: "Alpecin - Premier Tech" },
+    106: { name: "Edward Planckaert", team: "Alpecin - Premier Tech" },
+    107: { name: "Jonas Rickaert", team: "Alpecin - Premier Tech" },
+    108: { name: "Emiel Verstrynge", team: "Alpecin - Premier Tech" },
+
+    111: { name: "Ben O'Connor", team: "Team Jayco AlUla" },
+    112: { name: "Pascal Ackermann", team: "Team Jayco AlUla" },
+    113: { name: "Luke Durbridge", team: "Team Jayco AlUla" },
+    114: { name: "Felix Engelhardt", team: "Team Jayco AlUla" },
+    115: { name: "Michael Matthews", team: "Team Jayco AlUla" },
+    116: { name: "Kelland O'Brien", team: "Team Jayco AlUla" },
+    117: { name: "Luke Plapp", team: "Team Jayco AlUla" },
+    118: { name: "Mauro Schmid", team: "Team Jayco AlUla" },
+    
+    121: { name: "Tobias Halland Johannessen", team: "Uno-X Mobility" },
+    122: { name: "Jonas Abrahamsen", team: "Uno-X Mobility" },
+    123: { name: "Anthon Charmig", team: "Uno-X Mobility" },
+    124: { name: "Magnus Cort", team: "Uno-X Mobility" },
+    125: { name: "Anders Halland Johannessen", team: "Uno-X Mobility" },
+    126: { name: "Anders Skaarseth", team: "Uno-X Mobility" },
+    127: { name: "Torstein Træen", team: "Uno-X Mobility" },
+    128: { name: "Søren Wærenskjold", team: "Uno-X Mobility" },
+
+    131: { name: "Biniam Girmay", team: "NSN Cycling Team" },
+    132: { name: "Lewis Askey", team: "NSN Cycling Team" },
+    133: { name: "George Bennett", team: "NSN Cycling Team" },
+    134: { name: "Marco Frigo", team: "NSN Cycling Team" },
+    135: { name: "Matis Louvel", team: "NSN Cycling Team" },
+    136: { name: "Krists Neilands", team: "NSN Cycling Team" },
+    137: { name: "Jake Stewart", team: "NSN Cycling Team" },
+    138: { name: "Tom Van Asbroeck", team: "NSN Cycling Team" },
+
+    141: { name: "Cian Uijtdebroeks", team: "Movistar Team" },
+    142: { name: "Pablo Castrillo", team: "Movistar Team" },
+    143: { name: "Jefferson Alveiro Cepeda", team: "Movistar Team" },
+    144: { name: "Raúl García Pierna", team: "Movistar Team" },
+    145: { name: "Michel Hessmann", team: "Movistar Team" },
+    146: { name: "Nelson Oliveira", team: "Movistar Team" },
+    147: { name: "Javier Romo", team: "Movistar Team" },
+    148: { name: "Einer Rubio", team: "Movistar Team" },
+
+    151: { name: "Arnaud De Lie", team: "Lotto Intermarché" },
+    152: { name: "Huub Artz", team: "Lotto Intermarché" },
+    153: { name: "Jenno Berckmoes", team: "Lotto Intermarché" },
+    154: { name: "Lars Craps", team: "Lotto Intermarché" },
+    155: { name: "Liam Slock", team: "Lotto Intermarché" },
+    156: { name: "Lennert Van Eetvelt", team: "Lotto Intermarché" },
+    157: { name: "Baptiste Veistroffer", team: "Lotto Intermarché" },
+    158: { name: "Georg Zimmermann", team: "Lotto Intermarché" },
+
+    161: { name: "Ion Izagirre", team: "Cofidis" },
+    162: { name: "Piet Allegaert", team: "Cofidis" },
+    163: { name: "Alex Aranburu", team: "Cofidis" },
+    164: { name: "Jenthe Biermans", team: "Cofidis" },
+    165: { name: "Milan Fretin", team: "Cofidis" },
+    166: { name: "Alex Kirsch", team: "Cofidis" },
+    167: { name: "Hugo Page", team: "Cofidis" },
+    168: { name: "Benjamin Thomas", team: "Cofidis" },
+
+    171: { name: "Tom Pidcock", team: "Pinarello Q36.5 Pro Cycling Team" },
+    172: { name: "Xabier Mikel Azparren", team: "Pinarello Q36.5 Pro Cycling Team" },
+    173: { name: "Chris Harper", team: "Pinarello Q36.5 Pro Cycling Team" },
+    174: { name: "Quinten Hermans", team: "Pinarello Q36.5 Pro Cycling Team" },
+    175: { name: "Damien Howson", team: "Pinarello Q36.5 Pro Cycling Team" },
+    176: { name: "Xandro Meurisse", team: "Pinarello Q36.5 Pro Cycling Team" },
+    177: { name: "Brent Van Moer", team: "Pinarello Q36.5 Pro Cycling Team" },
+    178: { name: "Fred Wright", team: "Pinarello Q36.5 Pro Cycling Team" },
+
+    181: { name: "Romain Grégoire", team: "Groupama - FDJ United" },
+    182: { name: "Clément Berthet", team: "Groupama - FDJ United" },
+    183: { name: "Clément Braz Afonso", team: "Groupama - FDJ United" },
+    184: { name: "Ewen Costiou", team: "Groupama - FDJ United" },
+    185: { name: "Lorenzo Germani", team: "Groupama - FDJ United" },
+    186: { name: "Guillaume Martin", team: "Groupama - FDJ United" },
+    187: { name: "Quentin Pacher", team: "Groupama - FDJ United" },
+    188: { name: "Clément Russo", team: "Groupama - FDJ United" },
+
+    191: { name: "Julian Alaphilippe", team: "Tudor Pro Cycling Team" },
+    192: { name: "Arvid de Kleijn", team: "Tudor Pro Cycling Team" },
+    193: { name: "Marco Haller", team: "Tudor Pro Cycling Team" },
+    194: { name: "Marc Hirschi", team: "Tudor Pro Cycling Team" },
+    195: { name: "Rick Pluimers", team: "Tudor Pro Cycling Team" },
+    196: { name: "Michael Storer", team: "Tudor Pro Cycling Team" },
+    197: { name: "Matteo Trentin", team: "Tudor Pro Cycling Team" },
+    198: { name: "Yannis Voisard", team: "Tudor Pro Cycling Team" },
+
+    201: { name: "Jordan Jegat", team: "TotalEnergies" },
+    202: { name: "Nicolas Breuillard", team: "TotalEnergies" },
+    203: { name: "Joris Delbove", team: "TotalEnergies" },
+    204: { name: "Alexandre Delettre", team: "TotalEnergies" },
+    205: { name: "Thibault Guernalec", team: "TotalEnergies" },
+    206: { name: "Mathis Le Berre", team: "TotalEnergies" },
+    207: { name: "Anthony Turgis", team: "TotalEnergies" },
+    208: { name: "Matteo Vercher", team: "TotalEnergies" },
+
+    211: { name: "Warren Barguil", team: "Team Picnic PostNL" },
+    212: { name: "Frits Biesterbos", team: "Team Picnic PostNL" },
+    213: { name: "Pavel Bittner", team: "Team Picnic PostNL" },
+    214: { name: "John Degenkolb", team: "Team Picnic PostNL" },
+    215: { name: "Robbe Dhondt", team: "Team Picnic PostNL" },
+    216: { name: "Niklas Markl", team: "Team Picnic PostNL" },
+    217: { name: "Julius van den Berg", team: "Team Picnic PostNL" },
+    218: { name: "Frank van den Broek", team: "Team Picnic PostNL" },
+
+    221: { name: "Fernando Gaviria", team: "Caja Rural - Seguros RGA" },
+    222: { name: "Abel Balderstone", team: "Caja Rural - Seguros RGA" },
+    223: { name: "Sebastian Berwick", team: "Caja Rural - Seguros RGA" },
+    224: { name: "Alex Molenaar", team: "Caja Rural - Seguros RGA" },
+    225: { name: "Joel Nicolau", team: "Caja Rural - Seguros RGA" },
+    226: { name: "Stefano Oldani", team: "Caja Rural - Seguros RGA" },
+    227: { name: "Jakub Otruba", team: "Caja Rural - Seguros RGA" },
+    228: { name: "José Félix Parra", team: "Caja Rural - Seguros RGA" },
 };
 
 const input = document.getElementById("numberInput");
 const result = document.getElementById("result");
 
 input.addEventListener("input", () => {
-    const number = input.value;
-
-    if (number === "") {
-        result.textContent = "Bitte eine Nummer eingeben.";
-        return;
+    const rider = riders[number];
+    
+    if (rider) {
+        result.innerHTML = `
+            <strong>${rider.name}</strong><br>
+            <span>${rider.team}</span>
+        `;
+    } else {
+        result.textContent = "Nicht gefunden";
     }
-
-    result.textContent = riders[number] || "Nicht gefunden";
-});
+);
