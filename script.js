@@ -211,7 +211,7 @@ const input = document.getElementById("numberInput");
 const result = document.getElementById("result");
 
 input.addEventListener("input", () => {
-    const rider = riders[number];
+    const rider = riders[input];
     
     if (rider) {
         result.innerHTML = `
